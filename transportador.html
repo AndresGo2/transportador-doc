@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module transportador</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">transportador</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cuser%5Conedrive%5Cdocumentos%5Ctransporte%5Ctransportador.py">c:\users\user\onedrive\documentos\transporte\transportador.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;<a href="#Transportador">Transportador</a>&nbsp;para&nbsp;sistema&nbsp;de&nbsp;tienda&nbsp;de&nbsp;muebles.<br>
+&nbsp;<br>
+Este&nbsp;módulo&nbsp;implementa&nbsp;un&nbsp;servicio&nbsp;RPC&nbsp;que&nbsp;maneja&nbsp;solicitudes&nbsp;de&nbsp;transporte<br>
+para&nbsp;el&nbsp;sistema&nbsp;distribuido&nbsp;de&nbsp;la&nbsp;tienda&nbsp;de&nbsp;muebles.&nbsp;Proporciona&nbsp;funcionalidades<br>
+para&nbsp;solicitar&nbsp;transportes,&nbsp;gestionar&nbsp;el&nbsp;estado&nbsp;del&nbsp;servicio&nbsp;y&nbsp;consultar&nbsp;su&nbsp;disponibilidad.<br>
+&nbsp;<br>
+Componente&nbsp;del&nbsp;Taller&nbsp;Corte&nbsp;2&nbsp;-&nbsp;Sistemas&nbsp;Distribuidos:&nbsp;Middleware<br>
+Profesor:&nbsp;Carlos&nbsp;Armando&nbsp;López&nbsp;Solano,&nbsp;MSc.<br>
+&nbsp;<br>
+Ejemplo&nbsp;de&nbsp;uso:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Iniciar&nbsp;el&nbsp;servidor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;python&nbsp;transportador.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;En&nbsp;otro&nbsp;terminal&nbsp;o&nbsp;aplicación,&nbsp;conectarse&nbsp;como&nbsp;cliente:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;servidor&nbsp;=&nbsp;xmlrpc.client.ServerProxy('<a href="http://localhost:8000">http://localhost:8000</a>')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;resultado&nbsp;=&nbsp;servidor.ordenarTransporte("VENTA-001",&nbsp;{"direccion":&nbsp;"Calle&nbsp;123",&nbsp;"ciudad":&nbsp;"Bogotá"})</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="time.html">time</a><br>
+</td><td class="multicolumn"><a href="uuid.html">uuid</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="transportador.html#Transportador">Transportador</a>
+</dt></dl>
+</dd>
+<dt class="heading-text"><a href="xmlrpc.server.html#SimpleXMLRPCRequestHandler">xmlrpc.server.SimpleXMLRPCRequestHandler</a>(<a href="http.server.html#BaseHTTPRequestHandler">http.server.BaseHTTPRequestHandler</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="transportador.html#RequestHandler">RequestHandler</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="RequestHandler">class <strong>RequestHandler</strong></a>(<a href="xmlrpc.server.html#SimpleXMLRPCRequestHandler">xmlrpc.server.SimpleXMLRPCRequestHandler</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#RequestHandler">RequestHandler</a>(request,&nbsp;client_address,&nbsp;server)<br>
+&nbsp;<br>
+Gestor&nbsp;de&nbsp;solicitudes&nbsp;para&nbsp;el&nbsp;servidor&nbsp;XML-RPC.<br>
+&nbsp;<br>
+Esta&nbsp;clase&nbsp;define&nbsp;las&nbsp;rutas&nbsp;donde&nbsp;se&nbsp;exponen&nbsp;los&nbsp;métodos&nbsp;RPC<br>
+del&nbsp;componente&nbsp;<a href="#Transportador">Transportador</a>.<br>
+&nbsp;<br>
+Atributos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rpc_paths&nbsp;(tuple):&nbsp;Rutas&nbsp;donde&nbsp;se&nbsp;exponen&nbsp;los&nbsp;métodos&nbsp;RPC.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="transportador.html#RequestHandler">RequestHandler</a></dd>
+<dd><a href="xmlrpc.server.html#SimpleXMLRPCRequestHandler">xmlrpc.server.SimpleXMLRPCRequestHandler</a></dd>
+<dd><a href="http.server.html#BaseHTTPRequestHandler">http.server.BaseHTTPRequestHandler</a></dd>
+<dd><a href="socketserver.html#StreamRequestHandler">socketserver.StreamRequestHandler</a></dd>
+<dd><a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>rpc_paths</strong> = ('/RPC2',)</dl>
+
+<hr>
+Methods inherited from <a href="xmlrpc.server.html#SimpleXMLRPCRequestHandler">xmlrpc.server.SimpleXMLRPCRequestHandler</a>:<br>
+<dl><dt><a name="RequestHandler-accept_encodings"><strong>accept_encodings</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RequestHandler-decode_request_content"><strong>decode_request_content</strong></a>(self, data)</dt></dl>
+
+<dl><dt><a name="RequestHandler-do_POST"><strong>do_POST</strong></a>(self)</dt><dd><span class="code">Handles&nbsp;the&nbsp;HTTP&nbsp;POST&nbsp;request.<br>
+&nbsp;<br>
+Attempts&nbsp;to&nbsp;interpret&nbsp;all&nbsp;HTTP&nbsp;POST&nbsp;requests&nbsp;as&nbsp;XML-RPC&nbsp;calls,<br>
+which&nbsp;are&nbsp;forwarded&nbsp;to&nbsp;the&nbsp;server's&nbsp;_dispatch&nbsp;method&nbsp;for&nbsp;handling.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-is_rpc_path_valid"><strong>is_rpc_path_valid</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RequestHandler-log_request"><strong>log_request</strong></a>(self, code='-', size='-')</dt><dd><span class="code">Selectively&nbsp;log&nbsp;an&nbsp;accepted&nbsp;request.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-report_404"><strong>report_404</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="xmlrpc.server.html#SimpleXMLRPCRequestHandler">xmlrpc.server.SimpleXMLRPCRequestHandler</a>:<br>
+<dl><dt><strong>aepattern</strong> = re.compile('\n                            \\s* (...                     ', re.IGNORECASE|re.VERBOSE)</dl>
+
+<dl><dt><strong>disable_nagle_algorithm</strong> = True</dl>
+
+<dl><dt><strong>encode_threshold</strong> = 1400</dl>
+
+<dl><dt><strong>wbufsize</strong> = -1</dl>
+
+<hr>
+Methods inherited from <a href="http.server.html#BaseHTTPRequestHandler">http.server.BaseHTTPRequestHandler</a>:<br>
+<dl><dt><a name="RequestHandler-address_string"><strong>address_string</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;client&nbsp;address.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-date_time_string"><strong>date_time_string</strong></a>(self, timestamp=None)</dt><dd><span class="code">Return&nbsp;the&nbsp;current&nbsp;date&nbsp;and&nbsp;time&nbsp;formatted&nbsp;for&nbsp;a&nbsp;message&nbsp;header.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-end_headers"><strong>end_headers</strong></a>(self)</dt><dd><span class="code">Send&nbsp;the&nbsp;blank&nbsp;line&nbsp;ending&nbsp;the&nbsp;MIME&nbsp;headers.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-flush_headers"><strong>flush_headers</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RequestHandler-handle"><strong>handle</strong></a>(self)</dt><dd><span class="code">Handle&nbsp;multiple&nbsp;requests&nbsp;if&nbsp;necessary.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-handle_expect_100"><strong>handle_expect_100</strong></a>(self)</dt><dd><span class="code">Decide&nbsp;what&nbsp;to&nbsp;do&nbsp;with&nbsp;an&nbsp;"Expect:&nbsp;100-continue"&nbsp;header.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;client&nbsp;is&nbsp;expecting&nbsp;a&nbsp;100&nbsp;Continue&nbsp;response,&nbsp;we&nbsp;must<br>
+respond&nbsp;with&nbsp;either&nbsp;a&nbsp;100&nbsp;Continue&nbsp;or&nbsp;a&nbsp;final&nbsp;response&nbsp;before<br>
+waiting&nbsp;for&nbsp;the&nbsp;request&nbsp;body.&nbsp;The&nbsp;default&nbsp;is&nbsp;to&nbsp;always&nbsp;respond<br>
+with&nbsp;a&nbsp;100&nbsp;Continue.&nbsp;You&nbsp;can&nbsp;behave&nbsp;differently&nbsp;(for&nbsp;example,<br>
+reject&nbsp;unauthorized&nbsp;requests)&nbsp;by&nbsp;overriding&nbsp;this&nbsp;method.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;should&nbsp;either&nbsp;return&nbsp;True&nbsp;(possibly&nbsp;after&nbsp;sending<br>
+a&nbsp;100&nbsp;Continue&nbsp;response)&nbsp;or&nbsp;send&nbsp;an&nbsp;error&nbsp;response&nbsp;and&nbsp;return<br>
+False.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-handle_one_request"><strong>handle_one_request</strong></a>(self)</dt><dd><span class="code">Handle&nbsp;a&nbsp;single&nbsp;HTTP&nbsp;request.<br>
+&nbsp;<br>
+You&nbsp;normally&nbsp;don't&nbsp;need&nbsp;to&nbsp;override&nbsp;this&nbsp;method;&nbsp;see&nbsp;the&nbsp;class<br>
+__doc__&nbsp;string&nbsp;for&nbsp;information&nbsp;on&nbsp;how&nbsp;to&nbsp;handle&nbsp;specific&nbsp;HTTP<br>
+commands&nbsp;such&nbsp;as&nbsp;GET&nbsp;and&nbsp;POST.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-log_date_time_string"><strong>log_date_time_string</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;current&nbsp;time&nbsp;formatted&nbsp;for&nbsp;logging.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-log_error"><strong>log_error</strong></a>(self, format, *args)</dt><dd><span class="code">Log&nbsp;an&nbsp;error.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;called&nbsp;when&nbsp;a&nbsp;request&nbsp;cannot&nbsp;be&nbsp;fulfilled.&nbsp;&nbsp;By<br>
+default&nbsp;it&nbsp;passes&nbsp;the&nbsp;message&nbsp;on&nbsp;to&nbsp;<a href="#RequestHandler-log_message">log_message</a>().<br>
+&nbsp;<br>
+Arguments&nbsp;are&nbsp;the&nbsp;same&nbsp;as&nbsp;for&nbsp;<a href="#RequestHandler-log_message">log_message</a>().<br>
+&nbsp;<br>
+XXX&nbsp;This&nbsp;should&nbsp;go&nbsp;to&nbsp;the&nbsp;separate&nbsp;error&nbsp;log.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-log_message"><strong>log_message</strong></a>(self, format, *args)</dt><dd><span class="code">Log&nbsp;an&nbsp;arbitrary&nbsp;message.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;used&nbsp;by&nbsp;all&nbsp;other&nbsp;logging&nbsp;functions.&nbsp;&nbsp;Override<br>
+it&nbsp;if&nbsp;you&nbsp;have&nbsp;specific&nbsp;logging&nbsp;wishes.<br>
+&nbsp;<br>
+The&nbsp;first&nbsp;argument,&nbsp;FORMAT,&nbsp;is&nbsp;a&nbsp;format&nbsp;string&nbsp;for&nbsp;the<br>
+message&nbsp;to&nbsp;be&nbsp;logged.&nbsp;&nbsp;If&nbsp;the&nbsp;format&nbsp;string&nbsp;contains<br>
+any&nbsp;%&nbsp;escapes&nbsp;requiring&nbsp;parameters,&nbsp;they&nbsp;should&nbsp;be<br>
+specified&nbsp;as&nbsp;subsequent&nbsp;arguments&nbsp;(it's&nbsp;just&nbsp;like<br>
+printf!).<br>
+&nbsp;<br>
+The&nbsp;client&nbsp;ip&nbsp;and&nbsp;current&nbsp;date/time&nbsp;are&nbsp;prefixed&nbsp;to<br>
+every&nbsp;message.<br>
+&nbsp;<br>
+Unicode&nbsp;control&nbsp;characters&nbsp;are&nbsp;replaced&nbsp;with&nbsp;escaped&nbsp;hex<br>
+before&nbsp;writing&nbsp;the&nbsp;output&nbsp;to&nbsp;stderr.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-parse_request"><strong>parse_request</strong></a>(self)</dt><dd><span class="code">Parse&nbsp;a&nbsp;request&nbsp;(internal).<br>
+&nbsp;<br>
+The&nbsp;request&nbsp;should&nbsp;be&nbsp;stored&nbsp;in&nbsp;self.<strong>raw_requestline</strong>;&nbsp;the&nbsp;results<br>
+are&nbsp;in&nbsp;self.<strong>command</strong>,&nbsp;self.<strong>path</strong>,&nbsp;self.<strong>request_version</strong>&nbsp;and<br>
+self.<strong>headers</strong>.<br>
+&nbsp;<br>
+Return&nbsp;True&nbsp;for&nbsp;success,&nbsp;False&nbsp;for&nbsp;failure;&nbsp;on&nbsp;failure,&nbsp;any&nbsp;relevant<br>
+error&nbsp;response&nbsp;has&nbsp;already&nbsp;been&nbsp;sent&nbsp;back.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-send_error"><strong>send_error</strong></a>(self, code, message=None, explain=None)</dt><dd><span class="code">Send&nbsp;and&nbsp;log&nbsp;an&nbsp;error&nbsp;reply.<br>
+&nbsp;<br>
+Arguments&nbsp;are<br>
+*&nbsp;code:&nbsp;&nbsp;&nbsp;&nbsp;an&nbsp;HTTP&nbsp;error&nbsp;code<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;digits<br>
+*&nbsp;message:&nbsp;a&nbsp;simple&nbsp;optional&nbsp;1&nbsp;line&nbsp;reason&nbsp;phrase.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(&nbsp;HTAB&nbsp;/&nbsp;SP&nbsp;/&nbsp;VCHAR&nbsp;/&nbsp;%x80-FF&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaults&nbsp;to&nbsp;short&nbsp;entry&nbsp;matching&nbsp;the&nbsp;response&nbsp;code<br>
+*&nbsp;explain:&nbsp;a&nbsp;detailed&nbsp;message&nbsp;defaults&nbsp;to&nbsp;the&nbsp;long&nbsp;entry<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matching&nbsp;the&nbsp;response&nbsp;code.<br>
+&nbsp;<br>
+This&nbsp;sends&nbsp;an&nbsp;error&nbsp;response&nbsp;(so&nbsp;it&nbsp;must&nbsp;be&nbsp;called&nbsp;before&nbsp;any<br>
+output&nbsp;has&nbsp;been&nbsp;generated),&nbsp;logs&nbsp;the&nbsp;error,&nbsp;and&nbsp;finally&nbsp;sends<br>
+a&nbsp;piece&nbsp;of&nbsp;HTML&nbsp;explaining&nbsp;the&nbsp;error&nbsp;to&nbsp;the&nbsp;user.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-send_header"><strong>send_header</strong></a>(self, keyword, value)</dt><dd><span class="code">Send&nbsp;a&nbsp;MIME&nbsp;header&nbsp;to&nbsp;the&nbsp;headers&nbsp;buffer.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-send_response"><strong>send_response</strong></a>(self, code, message=None)</dt><dd><span class="code">Add&nbsp;the&nbsp;response&nbsp;header&nbsp;to&nbsp;the&nbsp;headers&nbsp;buffer&nbsp;and&nbsp;log&nbsp;the<br>
+response&nbsp;code.<br>
+&nbsp;<br>
+Also&nbsp;send&nbsp;two&nbsp;standard&nbsp;headers&nbsp;with&nbsp;the&nbsp;server&nbsp;software<br>
+version&nbsp;and&nbsp;the&nbsp;current&nbsp;date.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-send_response_only"><strong>send_response_only</strong></a>(self, code, message=None)</dt><dd><span class="code">Send&nbsp;the&nbsp;response&nbsp;header&nbsp;only.</span></dd></dl>
+
+<dl><dt><a name="RequestHandler-version_string"><strong>version_string</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;server&nbsp;software&nbsp;version&nbsp;string.</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="http.server.html#BaseHTTPRequestHandler">http.server.BaseHTTPRequestHandler</a>:<br>
+<dl><dt><strong>MessageClass</strong> = &lt;class 'http.client.HTTPMessage'&gt;</dl>
+
+<dl><dt><strong>default_request_version</strong> = 'HTTP/0.9'</dl>
+
+<dl><dt><strong>error_content_type</strong> = 'text/html;charset=utf-8'</dl>
+
+<dl><dt><strong>error_message_format</strong> = '&lt;!DOCTYPE HTML&gt;<span class="repr">\n</span>&lt;html lang="en"&gt;<span class="repr">\n</span>    &lt;head&gt;<span class="repr">\n</span>    ... %(code)s - %(explain)s.&lt;/p&gt;<span class="repr">\n</span>    &lt;/body&gt;<span class="repr">\n</span>&lt;/html&gt;<span class="repr">\n</span>'</dl>
+
+<dl><dt><strong>monthname</strong> = [None, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']</dl>
+
+<dl><dt><strong>protocol_version</strong> = 'HTTP/1.0'</dl>
+
+<dl><dt><strong>responses</strong> = {&lt;HTTPStatus.CONTINUE: 100&gt;: ('Continue', 'Request received, please continue'), &lt;HTTPStatus.SWITCHING_PROTOCOLS: 101&gt;: ('Switching Protocols', 'Switching to new protocol; obey Upgrade header'), &lt;HTTPStatus.PROCESSING: 102&gt;: ('Processing', ''), &lt;HTTPStatus.EARLY_HINTS: 103&gt;: ('Early Hints', ''), &lt;HTTPStatus.OK: 200&gt;: ('OK', 'Request fulfilled, document follows'), &lt;HTTPStatus.CREATED: 201&gt;: ('Created', 'Document created, URL follows'), &lt;HTTPStatus.ACCEPTED: 202&gt;: ('Accepted', 'Request accepted, processing continues off-line'), &lt;HTTPStatus.NON_AUTHORITATIVE_INFORMATION: 203&gt;: ('Non-Authoritative Information', 'Request fulfilled from cache'), &lt;HTTPStatus.NO_CONTENT: 204&gt;: ('No Content', 'Request fulfilled, nothing follows'), &lt;HTTPStatus.RESET_CONTENT: 205&gt;: ('Reset Content', 'Clear input form for further input'), ...}</dl>
+
+<dl><dt><strong>server_version</strong> = 'BaseHTTP/0.6'</dl>
+
+<dl><dt><strong>sys_version</strong> = 'Python/3.13.1'</dl>
+
+<dl><dt><strong>weekdayname</strong> = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#StreamRequestHandler">socketserver.StreamRequestHandler</a>:<br>
+<dl><dt><a name="RequestHandler-finish"><strong>finish</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RequestHandler-setup"><strong>setup</strong></a>(self)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="socketserver.html#StreamRequestHandler">socketserver.StreamRequestHandler</a>:<br>
+<dl><dt><strong>rbufsize</strong> = -1</dl>
+
+<dl><dt><strong>timeout</strong> = None</dl>
+
+<hr>
+Methods inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><a name="RequestHandler-__init__"><strong>__init__</strong></a>(self, request, client_address, server)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="socketserver.html#BaseRequestHandler">socketserver.BaseRequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Transportador">class <strong>Transportador</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Implementa&nbsp;el&nbsp;servicio&nbsp;de&nbsp;transporte&nbsp;para&nbsp;la&nbsp;tienda&nbsp;de&nbsp;muebles.<br>
+&nbsp;<br>
+Esta&nbsp;clase&nbsp;proporciona&nbsp;métodos&nbsp;para&nbsp;gestionar&nbsp;solicitudes&nbsp;de&nbsp;transporte<br>
+de&nbsp;productos&nbsp;vendidos&nbsp;por&nbsp;la&nbsp;tienda&nbsp;hacia&nbsp;los&nbsp;clientes,&nbsp;así&nbsp;como<br>
+para&nbsp;consultar&nbsp;y&nbsp;modificar&nbsp;el&nbsp;estado&nbsp;del&nbsp;servicio.<br>
+&nbsp;<br>
+Métodos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Transportador-ordenarTransporte">ordenarTransporte</a>(venta_id,&nbsp;destino):&nbsp;Solicita&nbsp;un&nbsp;nuevo&nbsp;transporte.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Transportador-setActivo">setActivo</a>(estado):&nbsp;Activa&nbsp;o&nbsp;desactiva&nbsp;el&nbsp;servicio.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Transportador-estado">estado</a>():&nbsp;Consulta&nbsp;el&nbsp;estado&nbsp;actual&nbsp;del&nbsp;servicio.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Transportador-estado"><strong>estado</strong></a>(self)</dt><dd><span class="code">Devuelve&nbsp;el&nbsp;estado&nbsp;actual&nbsp;del&nbsp;servicio&nbsp;de&nbsp;transporte.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;requiere&nbsp;parámetros.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Diccionario&nbsp;con&nbsp;el&nbsp;estado&nbsp;actual&nbsp;del&nbsp;servicio.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estructura:&nbsp;{"activo":&nbsp;bool}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;{"activo":&nbsp;True}<br>
+&nbsp;<br>
+Ejemplo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;transportador.<a href="#Transportador-estado">estado</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{'activo':&nbsp;True}</span></dd></dl>
+
+<dl><dt><a name="Transportador-ordenarTransporte"><strong>ordenarTransporte</strong></a>(self, venta_id, destino)</dt><dd><span class="code">Procesa&nbsp;una&nbsp;solicitud&nbsp;de&nbsp;transporte&nbsp;para&nbsp;una&nbsp;venta&nbsp;específica.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;venta_id&nbsp;(str):&nbsp;Identificador&nbsp;único&nbsp;de&nbsp;la&nbsp;venta&nbsp;a&nbsp;transportar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;"VENTA-2023-001"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;destino&nbsp;(dict):&nbsp;Información&nbsp;de&nbsp;destino&nbsp;que&nbsp;debe&nbsp;incluir:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;direccion&nbsp;(str):&nbsp;Dirección&nbsp;completa&nbsp;para&nbsp;la&nbsp;entrega.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;"Calle&nbsp;123&nbsp;#45-67,&nbsp;Edificio&nbsp;Central,&nbsp;Piso&nbsp;5"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;ciudad&nbsp;(str):&nbsp;Ciudad&nbsp;de&nbsp;entrega.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;"Bogotá"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;contacto&nbsp;(str,&nbsp;opcional):&nbsp;Datos&nbsp;de&nbsp;contacto&nbsp;del&nbsp;destinatario.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;"Cliente:&nbsp;María&nbsp;López,&nbsp;Tel:&nbsp;3001234567"<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Diccionario&nbsp;con&nbsp;la&nbsp;siguiente&nbsp;estructura:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;el&nbsp;servicio&nbsp;está&nbsp;activo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mensaje":&nbsp;"Transporte&nbsp;solicitado&nbsp;para&nbsp;venta&nbsp;[venta_id]&nbsp;al&nbsp;destino&nbsp;[destino]",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tracking_id":&nbsp;"[UUID&nbsp;generado]"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;el&nbsp;servicio&nbsp;está&nbsp;inactivo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"error":&nbsp;"El&nbsp;servicio&nbsp;de&nbsp;transporte&nbsp;está&nbsp;inactivo"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;<br>
+Ejemplo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;destino&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"direccion":&nbsp;"Calle&nbsp;123&nbsp;#45-67",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ciudad":&nbsp;"Bogotá",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"contacto":&nbsp;"Juan&nbsp;Pérez,&nbsp;Tel:&nbsp;3001234567"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;transportador.<a href="#Transportador-ordenarTransporte">ordenarTransporte</a>("VENTA-001",&nbsp;destino)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'mensaje':&nbsp;'Transporte&nbsp;solicitado&nbsp;para&nbsp;venta&nbsp;VENTA-001&nbsp;al&nbsp;destino&nbsp;{...}',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'tracking_id':&nbsp;'f47ac10b-58cc-4372-a567-0e02b2c3d479'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}</span></dd></dl>
+
+<dl><dt><a name="Transportador-setActivo"><strong>setActivo</strong></a>(self, estado)</dt><dd><span class="code">Permite&nbsp;activar&nbsp;o&nbsp;desactivar&nbsp;el&nbsp;servicio&nbsp;de&nbsp;transporte.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;estado&nbsp;(bool):&nbsp;True&nbsp;para&nbsp;activar&nbsp;el&nbsp;servicio,&nbsp;False&nbsp;para&nbsp;desactivarlo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Mensaje&nbsp;confirmando&nbsp;el&nbsp;cambio&nbsp;de&nbsp;estado.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ejemplo:&nbsp;"Estado&nbsp;actualizado:&nbsp;ACTIVO&nbsp;=&nbsp;True"<br>
+&nbsp;<br>
+Ejemplo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;transportador.<a href="#Transportador-setActivo">setActivo</a>(False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Estado&nbsp;actualizado:&nbsp;ACTIVO&nbsp;=&nbsp;False'</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><span class="code">Inicializa&nbsp;y&nbsp;ejecuta&nbsp;el&nbsp;servidor&nbsp;RPC&nbsp;para&nbsp;el&nbsp;componente&nbsp;<a href="#Transportador">Transportador</a>.<br>
+&nbsp;<br>
+Esta&nbsp;función&nbsp;configura&nbsp;el&nbsp;servidor&nbsp;en&nbsp;la&nbsp;dirección&nbsp;0.0.0.0&nbsp;(todas&nbsp;las&nbsp;interfaces)<br>
+y&nbsp;el&nbsp;puerto&nbsp;8000,&nbsp;registra&nbsp;los&nbsp;métodos&nbsp;de&nbsp;la&nbsp;clase&nbsp;<a href="#Transportador">Transportador</a>&nbsp;como<br>
+servicios&nbsp;RPC&nbsp;y&nbsp;mantiene&nbsp;el&nbsp;servidor&nbsp;en&nbsp;ejecución&nbsp;hasta&nbsp;que&nbsp;se&nbsp;reciba<br>
+una&nbsp;señal&nbsp;de&nbsp;interrupción&nbsp;(Ctrl+C).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;requiere&nbsp;parámetros.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;No&nbsp;retorna&nbsp;valores.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Ejemplo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;&gt;&nbsp;<a href="#-main">main</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[<a href="#Transportador">Transportador</a>]&nbsp;Servidor&nbsp;RPC&nbsp;corriendo&nbsp;en&nbsp;0.0.0.0:8000</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ACTIVO</strong> = True</td></tr></table>
+</body></html>
